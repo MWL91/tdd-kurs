@@ -1,0 +1,25 @@
+{
+    "name": "mwl91/tdd",
+    "description": "TDD Kurs",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^11.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mwl91\\Tdd\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mwl91\\Tests\\Tdd\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcin Lenkowski",
+            "email": "marcin@lenkowski.net"
+        }
+    ],
+    "require": {}
+}
