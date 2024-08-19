@@ -42,4 +42,9 @@ final class Fleet implements \Countable
     {
         $this->cars = array_filter($this->cars, fn(Car $existingCar) => $existingCar->getKey() !== $carId);
     }
+
+    public function __toString(): string
+    {
+        return join(PHP_EOL, array_map(fn(Car $car) => $car->getBrand()->value.' '.$car->getModel(), $this->cars));
+    }
 }

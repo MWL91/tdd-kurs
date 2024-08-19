@@ -163,5 +163,20 @@ final class FleetTest extends TestCase
         $this->assertEquals([$cars[0], $cars[1], $cars[2]], $fleet->getCars());
     }
 
+    public function testListCars(): void
+    {
+        // Given:
+        $this->expectOutputString("FIAT \nFIAT \nFIAT ");
+        $cars = $this->carBuilder->getCars(3);
+        $fleet = new Fleet($cars);
+
+        // When:
+        $fleetList = (string) $fleet;
+        echo $fleetList;
+
+        // Then:
+        $this->assertEquals(join(PHP_EOL, array_map(fn(Car $car) => $car->getBrand()->value.' '.$car->getModel(), $fleet->getCars())), $fleetList);
+    }
+
 
 }
