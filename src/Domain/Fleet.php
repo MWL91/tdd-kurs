@@ -12,6 +12,7 @@ final class Fleet implements \Countable
         private array  $cars = [],
         private ?Money $insuranceCost = null,
         private int    $cautionPercent = 0,
+        private ?ValueObjects\PickupPolicy $pickupPolicy = null,
     )
     {
     }
@@ -80,6 +81,31 @@ final class Fleet implements \Countable
     public function __toString(): string
     {
         return join(PHP_EOL, array_map(fn(Car $car) => $car->getBrand()->value.' '.$car->getModel(), $this->cars));
+    }
+
+    public function setPickupPolicy(ValueObjects\PickupPolicy $pickupPolicy): void
+    {
+        $this->pickupPolicy = $pickupPolicy;
+    }
+
+    public function getOfficePickupCost(): Money
+    {
+        return $this->pickupPolicy->getOfficePickupCost();
+    }
+
+    public function getAirportPickupCost(): Money
+    {
+        return $this->pickupPolicy->getAirportPickupCost();
+    }
+
+    public function getAddressPickupCost(): Money
+    {
+        return $this->pickupPolicy->getAddressPickupCost();
+    }
+
+    public function getOvertimePickupCost(): Money
+    {
+        return $this->pickupPolicy->getOvertimePickupCost();
     }
 
 }
