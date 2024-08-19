@@ -5,10 +5,19 @@ namespace Mwl91\Tests\Tdd\Unit;
 
 use Mwl91\Tdd\Domain\Car;
 use Mwl91\Tdd\Domain\Fleet;
+use Mwl91\Tests\Tdd\Builders\CarBuilder;
 use PHPUnit\Framework\TestCase;
 
 final class FleetTest extends TestCase
 {
+    private readonly CarBuilder $carBuilder;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->carBuilder = new CarBuilder();
+    }
+
     public function testCanCreateNewFleet(): void
     {
         // Given:
@@ -23,7 +32,7 @@ final class FleetTest extends TestCase
     public function testCanAddCarToFleet(): void
     {
         // Given:
-        $car = new Car();
+        $car = $this->carBuilder->getCar();
         $fleet = new Fleet();
 
         // When:
@@ -48,7 +57,7 @@ final class FleetTest extends TestCase
     public function testCanAddMoreThenOneCar(): void
     {
         // Given:
-        $cars = [new Car(), new Car(), new Car(), new Car()];
+        $cars = $this->carBuilder->getCars(4);
         $fleet = new Fleet();
 
         // When:
@@ -62,7 +71,7 @@ final class FleetTest extends TestCase
     public function testCanCreateFleetWithCars(): void
     {
         // Given:
-        $cars = [new Car(), new Car(), new Car(), new Car()];
+        $cars = $this->carBuilder->getCars(4);
 
         // When:
         $fleet = new Fleet($cars);
@@ -75,8 +84,8 @@ final class FleetTest extends TestCase
     public function testCanAddCarsToExistingFleetWithCars(): void
     {
         // Given:
-        $initializedCars = [new Car(), new Car(), new Car(), new Car()];
-        $newCars = [new Car(), new Car(), new Car(), new Car()];
+        $initializedCars = $this->carBuilder->getCars(4);
+        $newCars = $this->carBuilder->getCars(4);
         $fleet = new Fleet($initializedCars);
 
         // When:
@@ -85,6 +94,11 @@ final class FleetTest extends TestCase
         // Then:
         $this->assertCount(8, $fleet);
         $this->assertEquals([...$initializedCars, ...$newCars], $fleet->getCars());
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
     }
 
 

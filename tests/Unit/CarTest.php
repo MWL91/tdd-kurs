@@ -4,7 +4,11 @@ declare(strict_types=1);
 namespace Mwl91\Tests\Tdd\Unit;
 
 use Mwl91\Tdd\Domain\Car;
-use Mwl91\Tdd\Enums\CarClass;
+use Mwl91\Tdd\Domain\Enums\CarBrand;
+use Mwl91\Tdd\Domain\Enums\CarClass;
+use Mwl91\Tdd\Domain\Enums\CarType;
+use Mwl91\Tdd\Domain\Enums\Transmission;
+use Mwl91\Tdd\Domain\Enums\Fuel;
 use PHPUnit\Framework\TestCase;
 
 final class CarTest extends TestCase
@@ -14,11 +18,39 @@ final class CarTest extends TestCase
     public function testCanCreateCar(): void
     {
         // Given:
+        $carClass = CarClass::G_PLUS;
+        $transmission = Transmission::AUTOMATIC;
+        $fuel = Fuel::BENZIN;
+        $carType = CarType::HATCHBACK;
+        $km = 180;
+        $engineCapacity = 1368;
+        $price = 130000;
+        $brand = CarBrand::FIAT;
+        $model = "Abarth";
 
         // When:
-        $car = new Car();
+        $car = new Car(
+            $carClass,
+            $brand,
+            $model,
+            $carType,
+            $price,
+            $transmission,
+            $fuel,
+            $km,
+            $engineCapacity
+        );
 
         // Then:
         $this->assertInstanceOf(Car::class, $car);
+        $this->assertEquals($carClass, $car->getCarClass());
+        $this->assertEquals($transmission, $car->getTransmission());
+        $this->assertEquals($fuel, $car->getFuel());
+        $this->assertEquals($carType, $car->getCarType());
+        $this->assertEquals($km, $car->getKm());
+        $this->assertEquals($engineCapacity, $car->getEngineCapacity());
+        $this->assertEquals($price, $car->getPrice());
+        $this->assertEquals($brand, $car->getBrand());
+        $this->assertEquals($model, $car->getModel());
     }
 }
