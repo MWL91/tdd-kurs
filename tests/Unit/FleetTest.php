@@ -5,8 +5,11 @@ namespace Mwl91\Tests\Tdd\Unit;
 
 use Mwl91\Tdd\Domain\Car;
 use Mwl91\Tdd\Domain\Fleet;
+use Mwl91\Tdd\Domain\ValueObjects\CarId;
+use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tests\Tdd\Builders\CarBuilder;
 use PHPUnit\Framework\TestCase;
+use Ramsey\Uuid\Uuid;
 
 final class FleetTest extends TestCase
 {
@@ -16,6 +19,39 @@ final class FleetTest extends TestCase
     {
         parent::setUp();
         $this->carBuilder = new CarBuilder();
+    }
+
+    public function testCanCreateFleetId(): void
+    {
+        // Given:
+        $uuid = Uuid::uuid4();
+
+        // When:
+        $fleetId = FleetId::tryFrom($uuid);
+
+        // Then:
+        $this->assertEquals((string)$fleetId, (string)$uuid);
+    }
+
+    public function testCanCreateFleetIdUsingString(): void
+    {
+        // Given:
+        $uuid = Uuid::uuid4()->toString();
+
+        // When:
+        $fleetId = FleetId::tryFrom($uuid);
+
+        // Then:
+        $this->assertEquals((string)$fleetId, $uuid);
+    }
+
+    public function testCanGenerateFleetId(): void
+    {
+        // When:
+        $carId = FleetId::make();
+
+        // Then:
+        $this->assertTrue(Uuid::isValid((string)$carId));
     }
 
     public function testCanCreateNewFleet(): void
@@ -96,9 +132,35 @@ final class FleetTest extends TestCase
         $this->assertEquals([...$initializedCars, ...$newCars], $fleet->getCars());
     }
 
-    protected function tearDown(): void
+    public function testCanRemoveCarFromFleet(): void
     {
-        parent::tearDown();
+        // Given:
+        $initialFleetSize = 4;
+        $cars = $this->carBuilder->getCars($initialFleetSize);
+        $fleet = new Fleet($cars);
+
+        // When:
+        $fleet->deleteCar($cars[3]);
+
+        // Then:
+        $this->assertCount($initialFleetSize - 1, $fleet);
+        $this->assertEquals([$cars[0], $cars[1], $cars[2]], $fleet->getCars());
+    }
+
+    public function testCanRemoveCarFromFleetUsingId(): void
+    {
+        // Given:
+        $initialFleetSize = 4;
+        $cars = $this->carBuilder->getCars($initialFleetSize);
+        $fleet = new Fleet($cars);
+        $carId = $cars[3]->getKey();
+
+        // When:
+        $fleet->deleteId($carId);
+
+        // Then:
+        $this->assertCount($initialFleetSize - 1, $fleet);
+        $this->assertEquals([$cars[0], $cars[1], $cars[2]], $fleet->getCars());
     }
 
 

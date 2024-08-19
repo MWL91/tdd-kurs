@@ -9,15 +9,37 @@ use Mwl91\Tdd\Domain\Enums\CarClass;
 use Mwl91\Tdd\Domain\Enums\CarType;
 use Mwl91\Tdd\Domain\Enums\Transmission;
 use Mwl91\Tdd\Domain\Enums\Fuel;
+use Mwl91\Tdd\Domain\ValueObjects\CarId;
 use PHPUnit\Framework\TestCase;
+use Ramsey\Uuid\Uuid;
 
 final class CarTest extends TestCase
 {
+    public function testCanCreateCarId(): void
+    {
+        // Given:
+        $uuid = Uuid::uuid4();
 
+        // When:
+        $carId = CarId::tryFrom($uuid);
+
+        // Then:
+        $this->assertEquals((string)$carId, (string)$uuid);
+    }
+
+    public function testCanGenerateCarId(): void
+    {
+        // When:
+        $carId = CarId::make();
+
+        // Then:
+        $this->assertTrue(Uuid::isValid((string)$carId));
+    }
 
     public function testCanCreateCar(): void
     {
         // Given:
+        $id = CarId::make();
         $carClass = CarClass::G_PLUS;
         $transmission = Transmission::AUTOMATIC;
         $fuel = Fuel::BENZIN;
@@ -30,6 +52,7 @@ final class CarTest extends TestCase
 
         // When:
         $car = new Car(
+            $id,
             $carClass,
             $brand,
             $model,
@@ -43,6 +66,7 @@ final class CarTest extends TestCase
 
         // Then:
         $this->assertInstanceOf(Car::class, $car);
+        $this->assertEquals($id, $car->getKey());
         $this->assertEquals($carClass, $car->getCarClass());
         $this->assertEquals($transmission, $car->getTransmission());
         $this->assertEquals($fuel, $car->getFuel());

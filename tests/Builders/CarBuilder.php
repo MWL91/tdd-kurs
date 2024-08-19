@@ -9,9 +9,11 @@ use Mwl91\Tdd\Domain\Enums\CarClass;
 use Mwl91\Tdd\Domain\Enums\CarType;
 use Mwl91\Tdd\Domain\Enums\Fuel;
 use Mwl91\Tdd\Domain\Enums\Transmission;
+use Mwl91\Tdd\Domain\ValueObjects\CarId;
 
 final class CarBuilder
 {
+    private CarId $carId;
     private CarClass $carClass;
     private CarBrand $brand;
     private string $model;
@@ -26,6 +28,7 @@ final class CarBuilder
     public function getCar(): Car
     {
         return new Car(
+            $this->getId(),
             $this->getCarClass(),
             $this->getBrand(),
             $this->getModel(),
@@ -138,4 +141,15 @@ final class CarBuilder
 
         return $cars;
     }
+
+    public function getId(): CarId
+    {
+        return $this->carId ?? CarId::make();
+    }
+
+    public function setCarId(CarId $carId): void
+    {
+        $this->carId = $carId;
+    }
+
 }

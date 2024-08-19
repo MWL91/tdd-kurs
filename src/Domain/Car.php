@@ -7,10 +7,13 @@ use Mwl91\Tdd\Domain\Enums\CarClass;
 use Mwl91\Tdd\Domain\Enums\CarType;
 use Mwl91\Tdd\Domain\Enums\Fuel;
 use Mwl91\Tdd\Domain\Enums\Transmission;
+use Mwl91\Tdd\Domain\ValueObjects\CarId;
+use Ramsey\Uuid\UuidInterface;
 
 final class Car
 {
     public function __construct(
+        private readonly CarId $id,
         private readonly CarClass $carClass,
         private readonly CarBrand $brand,
         private readonly string $model,
@@ -22,6 +25,11 @@ final class Car
         private readonly int $engineCapacity,
     )
     {
+    }
+
+    public function getKey(): CarId
+    {
+        return $this->id;
     }
 
     public function getCarClass(): CarClass
