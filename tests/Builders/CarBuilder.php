@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mwl91\Tests\Tdd\Builders;
 
+use Money\Currency;
+use Money\Money;
 use Mwl91\Tdd\Domain\Car;
 use Mwl91\Tdd\Domain\Enums\CarBrand;
 use Mwl91\Tdd\Domain\Enums\CarClass;
@@ -18,7 +20,7 @@ final class CarBuilder
     private CarBrand $brand;
     private string $model;
     private CarType $carType;
-    private int $price;
+    private Money $price;
     private Transmission $transmission;
     private Fuel $fuel;
     private int $km;
@@ -81,12 +83,12 @@ final class CarBuilder
         $this->carType = $carType;
     }
 
-    public function getPrice(): int
+    public function getPrice(): Money
     {
-        return $this->price ?? 100000;
+        return $this->price ?? new Money(100000, new Currency("PLN"));
     }
 
-    public function setPrice(int $price): void
+    public function setPrice(Money $price): void
     {
         $this->price = $price;
     }

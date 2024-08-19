@@ -21,5 +21,8 @@
             "email": "marcin@lenkowski.net"
         }
     ],
-    "require": {}
+    "require": {
+        "moneyphp/money": "^4.5",
+        "ramsey/uuid": "^4.7"
+    }
 }

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mwl91\Tests\Tdd\Unit;
 
+use Money\Currency;
+use Money\Money;
 use Mwl91\Tdd\Domain\Car;
 use Mwl91\Tdd\Domain\Enums\CarBrand;
 use Mwl91\Tdd\Domain\Enums\CarClass;
@@ -46,7 +48,7 @@ final class CarTest extends TestCase
         $carType = CarType::HATCHBACK;
         $km = 180;
         $engineCapacity = 1368;
-        $price = 130000;
+        $price = new Money(130000, new Currency("PLN"));
         $brand = CarBrand::FIAT;
         $model = "Abarth";
 

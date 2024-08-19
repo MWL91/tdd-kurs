@@ -3,12 +3,15 @@ declare(strict_types=1);
 
 namespace Mwl91\Tdd\Domain;
 
+use Money\Money;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
 
 final class Fleet implements \Countable
 {
     public function __construct(
-        private array $cars = []
+        private array  $cars = [],
+        private ?Money $insuranceCost = null,
+        private int    $cautionPercent = 0,
     )
     {
     }
@@ -43,8 +46,40 @@ final class Fleet implements \Countable
         $this->cars = array_filter($this->cars, fn(Car $existingCar) => $existingCar->getKey() !== $carId);
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
+    public function setInsuranceCost(Money $insuranceCost): void
+    {
+        if($insuranceCost->isNegative()) {
+            throw new \InvalidArgumentException("Insurance cost can not be lower than 0");
+        }
+
+        $this->insuranceCost = $insuranceCost;
+    }
+
+    public function getInsuranceCost(): Money
+    {
+        return $this->insuranceCost;
+    }
+
+    public function setCautionPercent(int $percent): void
+    {
+        if($percent < 0 || $percent > 100) {
+            throw new \OutOfBoundsException("Percent must be between 0 and 100");
+        }
+
+        $this->cautionPercent = $percent;
+    }
+
+    public function getCautionPercent(): int
+    {
+        return $this->cautionPercent;
+    }
+
     public function __toString(): string
     {
         return join(PHP_EOL, array_map(fn(Car $car) => $car->getBrand()->value.' '.$car->getModel(), $this->cars));
     }
+
 }

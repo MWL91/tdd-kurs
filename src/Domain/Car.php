@@ -2,13 +2,13 @@
 
 namespace Mwl91\Tdd\Domain;
 
+use Money\Money;
 use Mwl91\Tdd\Domain\Enums\CarBrand;
 use Mwl91\Tdd\Domain\Enums\CarClass;
 use Mwl91\Tdd\Domain\Enums\CarType;
 use Mwl91\Tdd\Domain\Enums\Fuel;
 use Mwl91\Tdd\Domain\Enums\Transmission;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
-use Ramsey\Uuid\UuidInterface;
 
 final class Car
 {
@@ -18,7 +18,7 @@ final class Car
         private readonly CarBrand $brand,
         private readonly string $model,
         private readonly CarType $carType,
-        private readonly int $price,
+        private readonly Money $price,
         private readonly Transmission $transmission,
         private readonly Fuel $fuel,
         private readonly int $km,
@@ -62,7 +62,7 @@ final class Car
         return $this->engineCapacity;
     }
 
-    public function getPrice(): int
+    public function getPrice(): Money
     {
         return $this->price;
     }

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Mwl91\Tests\Tdd\Unit;
 
+use Money\Currency;
+use Money\Money;
 use Mwl91\Tdd\Domain\Car;
 use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
@@ -176,6 +178,76 @@ final class FleetTest extends TestCase
 
         // Then:
         $this->assertEquals(join(PHP_EOL, array_map(fn(Car $car) => $car->getBrand()->value.' '.$car->getModel(), $fleet->getCars())), $fleetList);
+    }
+
+    public function testCanSetInsuranceCost(): void
+    {
+        // Given:
+        $insuranceCost = new Money(100, new Currency("PLN"));
+        $cars = $this->carBuilder->getCars(3);
+        $fleet = new Fleet($cars);
+
+        // When:
+        $fleet->setInsuranceCost($insuranceCost);
+
+        // Then:
+        $this->assertEquals($insuranceCost, $fleet->getInsuranceCost());
+    }
+
+    public function testCannotSetInsuranceCostLowerThenZero(): void
+    {
+        // Expect:
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage("Insurance cost can not be lower than 0");
+
+        // Given:
+        $insuranceCost = new Money(-100, new Currency("PLN"));
+        $cars = $this->carBuilder->getCars(3);
+        $fleet = new Fleet($cars);
+
+        // When:
+        $fleet->setInsuranceCost($insuranceCost);
+    }
+
+    public function testCanSetCautionPercent(): void
+    {
+        // Given:
+        $percent = 10;
+        $fleet = new Fleet();
+
+        // When:
+        $fleet->setCautionPercent($percent);
+
+        // Then:
+        $this->assertEquals($percent, $fleet->getCautionPercent());
+    }
+
+    public function testCannotSetCautionInvalidPercent(): void
+    {
+        // Given:
+        $this->expectException(\OutOfBoundsException::class);
+        $percent = -1;
+        $fleet = new Fleet();
+
+        // When:
+        $fleet->setCautionPercent($percent);
+
+        // Then:
+        $this->assertEquals($percent, $fleet->getCautionPercent());
+    }
+
+    public function testCannotSetCautionPercentHigherThen100(): void
+    {
+        // Given:
+        $this->expectException(\OutOfBoundsException::class);
+        $percent = 101;
+        $fleet = new Fleet();
+
+        // When:
+        $fleet->setCautionPercent($percent);
+
+        // Then:
+        $this->assertEquals($percent, $fleet->getCautionPercent());
     }
 
 
