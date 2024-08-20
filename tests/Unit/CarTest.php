@@ -12,11 +12,13 @@ use Mwl91\Tdd\Domain\Enums\CarType;
 use Mwl91\Tdd\Domain\Enums\Transmission;
 use Mwl91\Tdd\Domain\Enums\Fuel;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
 final class CarTest extends TestCase
 {
+    #[TestDox('ID auta wygenerowany')]
     public function testCanCreateCarId(): void
     {
         // Given:

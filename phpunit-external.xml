@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.3/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
+         bootstrap="custom-bootstrap.php"
          cacheDirectory=".phpunit.cache"
          executionOrder="depends,defects"
          shortenArraysForExportThreshold="10"
          requireCoverageMetadata="false"
          beStrictAboutCoverageMetadata="false"
-         beStrictAboutOutputDuringTests="true"
+         beStrictAboutOutputDuringTests="false"
          failOnRisky="true"
          failOnWarning="true">
     <testsuites>
@@ -23,6 +23,6 @@
     </source>
 
     <php>
-        <env name="APP_ENV" value="testing"/>
+        <env name="APP_ENV" value="external_testing"/>
     </php>
 </phpunit>

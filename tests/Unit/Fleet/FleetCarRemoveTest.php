@@ -18,19 +18,19 @@ class FleetCarRemoveTest extends TestCase
     }
 
     public function testCanRemoveCarFromFleet(): void
-{
-    // Given:
-    $initialFleetSize = 4;
-    $cars = $this->carBuilder->getCars($initialFleetSize);
-    $fleet = new Fleet($cars);
+    {
+        // Given:
+        $initialFleetSize = 4;
+        $cars = $this->carBuilder->getCars($initialFleetSize);
+        $fleet = new Fleet($cars);
 
-    // When:
-    $fleet->deleteCar($cars[3]);
+        // When:
+        $fleet->deleteCar($cars[3]);
 
-    // Then:
-    $this->assertCount($initialFleetSize - 1, $fleet);
-    $this->assertEquals([$cars[0], $cars[1], $cars[2]], $fleet->getCars());
-}
+        // Then:
+        $this->assertCount($initialFleetSize - 1, $fleet);
+        $this->assertEquals([$cars[0], $cars[1], $cars[2]], $fleet->getCars());
+    }
 
     public function testCanRemoveCarFromFleetUsingId(): void
     {

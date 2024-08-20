@@ -5,17 +5,11 @@ namespace Mwl91\Tests\Tdd\Unit\Fleet;
 
 use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tests\Tdd\Builders\CarBuilder;
+use Mwl91\Tests\Tdd\FleetTestCase;
 use PHPUnit\Framework\TestCase;
 
-final class FleetCarsCreateTest extends TestCase
+final class FleetCarsCreateTest extends FleetTestCase
 {
-    private readonly CarBuilder $carBuilder;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->carBuilder = new CarBuilder();
-    }
 
     public function testCanAddCarToFleet(): void
     {

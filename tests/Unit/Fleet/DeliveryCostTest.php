@@ -7,17 +7,12 @@ use Money\Currency;
 use Money\Money;
 use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tdd\Domain\ValueObjects\PickupPolicy;
+use Mwl91\Tests\Tdd\FleetTestCase;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-final class DeliveryCostTest extends TestCase
+final class DeliveryCostTest extends FleetTestCase
 {
-    private readonly \Faker\Generator $faker;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->faker = \Faker\Factory::create();
-    }
 
     public function testCanSetDeliveryCost(): void
     {
