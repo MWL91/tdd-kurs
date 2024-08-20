@@ -1,0 +1,459 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="PickupPolicy.php" path="/ValueObjects">
+    <totals>
+      <lines total="56" comments="0" code="56" executable="13" executed="13" percent="100.00"/>
+      <methods count="5" tested="5" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Mwl91\Tdd\Domain\ValueObjects\PickupPolicy" start="8" executable="13" executed="13" crap="9">
+      <namespace name="Mwl91\Tdd\Domain\ValueObjects"/>
+      <method name="__construct" signature="__construct(Money\Money $officePickupCost, Money\Money $airportPickupCost, Money\Money $addressPickupCost, Money\Money $overtimePickupCost)" start="15" end="35" crap="5" executable="9" executed="9" coverage="100"/>
+      <method name="getOfficePickupCost" signature="getOfficePickupCost(): Money\Money" start="37" end="40" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getAirportPickupCost" signature="getAirportPickupCost(): Money\Money" start="42" end="45" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getAddressPickupCost" signature="getAddressPickupCost(): Money\Money" start="47" end="50" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getOvertimePickupCost" signature="getOvertimePickupCost(): Money\Money" start="52" end="55" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="23">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOfficePickup"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAirportPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAddressPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOvertimePickupCost"/>
+      </line>
+      <line nr="24">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAirportPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAddressPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOvertimePickupCost"/>
+      </line>
+      <line nr="25">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAddressPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOvertimePickupCost"/>
+      </line>
+      <line nr="26">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOfficePickup"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAirportPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAddressPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOvertimePickupCost"/>
+      </line>
+      <line nr="28">
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOfficePickup"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAirportPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAddressPickupCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOvertimePickupCost"/>
+      </line>
+      <line nr="31">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="32">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="33">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="34">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="39">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="44">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="49">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+      <line nr="54">
+        <covered by="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost"/>
+        <covered by="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_DECLARE">declare</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strict_types</token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_LNUMBER">1</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="3"/>
+      <line no="4">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Mwl91\Tdd\Domain\ValueObjects</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="5"/>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Money\Money</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7"/>
+      <line no="8">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">PickupPolicy</token>
+      </line>
+      <line no="9">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$officePickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$airportPickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="12">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$addressPickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$overtimePickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14"/>
+      <line no="15">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$officePickupCost</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$airportPickupCost</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$addressPickupCost</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">Money</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$overtimePickupCost</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="20">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$officePickupCost</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isNegative</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$airportPickupCost</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isNegative</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$addressPickupCost</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isNegative</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$overtimePickupCost</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isNegative</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_FULLY_QUALIFIED">\OutOfBoundsException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"Delivery cost must be positive"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="30"/>
+      <line no="31">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">officePickupCost</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$officePickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">airportPickupCost</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$airportPickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">addressPickupCost</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$addressPickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">overtimePickupCost</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$overtimePickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getOfficePickupCost</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">officePickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="41"/>
+      <line no="42">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAirportPickupCost</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">airportPickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="46"/>
+      <line no="47">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAddressPickupCost</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">addressPickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="51"/>
+      <line no="52">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getOvertimePickupCost</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Money</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">overtimePickupCost</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="56">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+    </source>
+  </file>
+</phpunit>

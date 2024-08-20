@@ -7,16 +7,30 @@ use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 
 final class FleetIdTest extends TestCase
 {
     public function testCanGenerateFleetId(): void
     {
         // When:
-        $carId = FleetId::make();
+        $fleetId = FleetId::make();
 
         // Then:
-        $this->assertTrue(Uuid::isValid((string)$carId));
+        $this->assertTrue(Uuid::isValid((string)$fleetId));
+    }
+
+    public function testCanGetGeneratedId(): void
+    {
+        // Given:
+        $fleetId = FleetId::make();
+
+        // When:
+        $uuid = $fleetId->getId();
+
+        // Then:
+        $this->assertInstanceOf(UuidInterface::class, $uuid);
+        $this->assertEquals($fleetId->__toString(), $uuid->__toString());
     }
 
     public function testCanCreateFleetId(): void

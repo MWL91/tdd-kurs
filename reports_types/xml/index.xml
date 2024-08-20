@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Tue Aug 20 18:41:50 UTC 2024" phpunit="11.3.1" coverage="11.0.5">
+    <runtime name="PHP" version="8.3.10" url="https://www.php.net/"/>
+    <driver name="xdebug" version="3.3.2"/>
+  </build>
+  <project source="/app/src/Domain">
+    <tests>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest::testCanSetDeliveryCost" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarsCreateTest::testCanCreateFleetWithCars" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarsCreateTest::testCanAddCarsToExistingFleetWithCars" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarsCreateTest::testCanAddCarToFleet" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarsCreateTest::testCanAddMoreThenOneCar" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarsCreateTest::testFleetMayNotHaveAnyCars" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetInsuranceCostTest::testCanSetInsuranceCost" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetInsuranceCostTest::testCannotSetInsuranceCostLowerThenZero" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCanCreatePickupPolicy" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOfficePickup" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAirportPickupCost" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidAddressPickupCost" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\PickupPolicyTest::testCannotCreateNegativePickupPolicyCosts#invalidOvertimePickupCost" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarRemoveTest::testCanRemoveCarFromFleet" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCarRemoveTest::testCanRemoveCarFromFleetUsingId" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\CarTest::testCanCreateCarId" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\CarTest::testCanCreateCar" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\CarTest::testCanGenerateCarId" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCatListingTest::testListCars" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCautionTest::testCanSetCautionPercent" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCautionTest::testCannotSetCautionInvalidPercent" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCautionTest::testCannotSetCautionPercentHigherThen100" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetCreateTest::testCanCreateNewFleet" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetIdTest::testCanGetGeneratedId" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetIdTest::testCanCreateFleetId" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetIdTest::testCanCreateFleetIdUsingString" size="unknown" status="success"/>
+      <test name="Mwl91\Tests\Tdd\Unit\Fleet\FleetIdTest::testCanGenerateFleetId" size="unknown" status="success"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="346" comments="3" code="343" executable="52" executed="52" percent="100.00"/>
+        <methods count="38" tested="38" percent="100.00"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="4" tested="4" percent="100.00"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="Enums">
+        <totals>
+          <lines total="46" comments="0" code="46" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="CarBrand.php" href="Enums/CarBrand.php.xml">
+          <totals>
+            <lines total="9" comments="0" code="9" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="CarClass.php" href="Enums/CarClass.php.xml">
+          <totals>
+            <lines total="9" comments="0" code="9" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="CarType.php" href="Enums/CarType.php.xml">
+          <totals>
+            <lines total="9" comments="0" code="9" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Fuel.php" href="Enums/Fuel.php.xml">
+          <totals>
+            <lines total="9" comments="0" code="9" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Transmission.php" href="Enums/Transmission.php.xml">
+          <totals>
+            <lines total="10" comments="0" code="10" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="ValueObjects">
+        <totals>
+          <lines total="110" comments="0" code="110" executable="20" executed="20" percent="100.00"/>
+          <methods count="10" tested="10" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="2" tested="2" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="CarId.php" href="ValueObjects/CarId.php.xml">
+          <totals>
+            <lines total="7" comments="0" code="7" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="FleetId.php" href="ValueObjects/FleetId.php.xml">
+          <totals>
+            <lines total="7" comments="0" code="7" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Id.php" href="ValueObjects/Id.php.xml">
+          <totals>
+            <lines total="40" comments="0" code="40" executable="7" executed="7" percent="100.00"/>
+            <methods count="5" tested="5" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="PickupPolicy.php" href="ValueObjects/PickupPolicy.php.xml">
+          <totals>
+            <lines total="56" comments="0" code="56" executable="13" executed="13" percent="100.00"/>
+            <methods count="5" tested="5" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <file name="Car.php" href="Car.php.xml">
+        <totals>
+          <lines total="79" comments="0" code="79" executable="11" executed="11" percent="100.00"/>
+          <methods count="11" tested="11" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="Fleet.php" href="Fleet.php.xml">
+        <totals>
+          <lines total="111" comments="3" code="108" executable="21" executed="21" percent="100.00"/>
+          <methods count="17" tested="17" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+    </directory>
+  </project>
+</phpunit>
