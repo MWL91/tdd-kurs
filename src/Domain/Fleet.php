@@ -5,16 +5,23 @@ namespace Mwl91\Tdd\Domain;
 
 use Money\Money;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
+use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 
 final class Fleet implements \Countable
 {
     public function __construct(
+        private FleetId $id,
         private array  $cars = [],
         private ?Money $insuranceCost = null,
         private int    $cautionPercent = 0,
         private ?ValueObjects\PickupPolicy $pickupPolicy = null,
     )
     {
+    }
+
+    public function getKey(): FleetId
+    {
+        return $this->id;
     }
 
     public function addCar(Car $car): void

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 
 use Mwl91\Tdd\Domain\Fleet;
+use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tests\Tdd\Builders\CarBuilder;
 use PHPUnit\Framework\TestCase;
 
@@ -22,7 +23,8 @@ class FleetCarRemoveTest extends TestCase
         // Given:
         $initialFleetSize = 4;
         $cars = $this->carBuilder->getCars($initialFleetSize);
-        $fleet = new Fleet($cars);
+        $id = FleetId::make();
+        $fleet = new Fleet($id, $cars);
 
         // When:
         $fleet->deleteCar($cars[3]);
@@ -37,7 +39,8 @@ class FleetCarRemoveTest extends TestCase
         // Given:
         $initialFleetSize = 4;
         $cars = $this->carBuilder->getCars($initialFleetSize);
-        $fleet = new Fleet($cars);
+        $id = FleetId::make();
+        $fleet = new Fleet($id, $cars);
         $carId = $cars[3]->getKey();
 
         // When:

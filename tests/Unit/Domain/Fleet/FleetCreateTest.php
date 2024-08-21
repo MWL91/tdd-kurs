@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 
 use Mwl91\Tdd\Domain\Fleet;
+use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tests\Tdd\FleetTestCase;
 
 final class FleetCreateTest extends FleetTestCase
@@ -10,9 +11,10 @@ final class FleetCreateTest extends FleetTestCase
     public function testCanCreateNewFleet(): void
     {
         // Given:
+        $id = FleetId::make();
 
         // When:
-        $fleet = new Fleet();
+        $fleet = new Fleet($id);
 
         // Then:
         $this->assertInstanceOf(Fleet::class, $fleet);
@@ -22,7 +24,8 @@ final class FleetCreateTest extends FleetTestCase
     {
         // Given:
         $car = $this->carBuilder->getCar();
-        $fleet = new Fleet();
+        $id = FleetId::make();
+        $fleet = new Fleet($id);
 
         // When:
         $fleet->addCar($car);
@@ -35,7 +38,8 @@ final class FleetCreateTest extends FleetTestCase
     public function testFleetMayNotHaveAnyCars(): void
     {
         // Given:
-        $fleet = new Fleet();
+        $id = FleetId::make();
+        $fleet = new Fleet($id);
 
         // Then:
         $this->assertEmpty($fleet);
@@ -47,7 +51,8 @@ final class FleetCreateTest extends FleetTestCase
     {
         // Given:
         $cars = $this->carBuilder->getCars(4);
-        $fleet = new Fleet();
+        $id = FleetId::make();
+        $fleet = new Fleet($id);
 
         // When:
         $fleet->addCars($cars);
@@ -61,9 +66,10 @@ final class FleetCreateTest extends FleetTestCase
     {
         // Given:
         $cars = $this->carBuilder->getCars(4);
+        $id = FleetId::make();
 
         // When:
-        $fleet = new Fleet($cars);
+        $fleet = new Fleet($id, $cars);
 
         // Then:
         $this->assertEquals($cars, $fleet->getCars());
@@ -75,7 +81,8 @@ final class FleetCreateTest extends FleetTestCase
         // Given:
         $initializedCars = $this->carBuilder->getCars(4);
         $newCars = $this->carBuilder->getCars(4);
-        $fleet = new Fleet($initializedCars);
+        $id = FleetId::make();
+        $fleet = new Fleet($id, $initializedCars);
 
         // When:
         $fleet->addCars($newCars);

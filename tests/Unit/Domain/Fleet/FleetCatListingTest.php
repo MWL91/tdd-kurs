@@ -5,6 +5,7 @@ namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 
 use Mwl91\Tdd\Domain\Car;
 use Mwl91\Tdd\Domain\Fleet;
+use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tests\Tdd\Builders\CarBuilder;
 use PHPUnit\Framework\TestCase;
 
@@ -23,7 +24,8 @@ class FleetCatListingTest extends TestCase
         // Given:
         $this->expectOutputString("FIAT \nFIAT \nFIAT ");
         $cars = $this->carBuilder->getCars(3);
-        $fleet = new Fleet($cars);
+        $id = FleetId::make();
+        $fleet = new Fleet($id, $cars);
 
         // When:
         $fleetList = (string) $fleet;

@@ -6,6 +6,7 @@ namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 use Money\Currency;
 use Money\Money;
 use Mwl91\Tdd\Domain\Fleet;
+use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tests\Tdd\Builders\CarBuilder;
 use PHPUnit\Framework\TestCase;
 
@@ -25,7 +26,8 @@ class FleetInsuranceCostTest extends TestCase
         // Given:
         $insuranceCost = new Money(100, new Currency("PLN"));
         $cars = $this->carBuilder->getCars(3);
-        $fleet = new Fleet($cars);
+        $id = FleetId::make();
+        $fleet = new Fleet($id, $cars);
 
         // When:
         $fleet->setInsuranceCost($insuranceCost);
@@ -43,7 +45,8 @@ class FleetInsuranceCostTest extends TestCase
         // Given:
         $insuranceCost = new Money(-100, new Currency("PLN"));
         $cars = $this->carBuilder->getCars(3);
-        $fleet = new Fleet($cars);
+        $id = FleetId::make();
+        $fleet = new Fleet($id, $cars);
 
         // When:
         $fleet->setInsuranceCost($insuranceCost);
