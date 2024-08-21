@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Mwl91\Tdd\Domain;
 
+use Money\Currency;
 use Money\Money;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
 use Mwl91\Tdd\Domain\ValueObjects\FleetId;
@@ -66,7 +67,7 @@ final class Fleet implements \Countable
         $this->insuranceCost = $insuranceCost;
     }
 
-    public function getInsuranceCost(): Money
+    public function getInsuranceCost(): ?Money
     {
         return $this->insuranceCost;
     }
@@ -95,24 +96,24 @@ final class Fleet implements \Countable
         $this->pickupPolicy = $pickupPolicy;
     }
 
-    public function getOfficePickupCost(): Money
+    public function getOfficePickupCost(): ?Money
     {
-        return $this->pickupPolicy->getOfficePickupCost();
+        return $this->pickupPolicy?->getOfficePickupCost();
     }
 
-    public function getAirportPickupCost(): Money
+    public function getAirportPickupCost(): ?Money
     {
-        return $this->pickupPolicy->getAirportPickupCost();
+        return $this->pickupPolicy?->getAirportPickupCost();
     }
 
-    public function getAddressPickupCost(): Money
+    public function getAddressPickupCost(): ?Money
     {
-        return $this->pickupPolicy->getAddressPickupCost();
+        return $this->pickupPolicy?->getAddressPickupCost();
     }
 
-    public function getOvertimePickupCost(): Money
+    public function getOvertimePickupCost(): ?Money
     {
-        return $this->pickupPolicy->getOvertimePickupCost();
+        return $this->pickupPolicy?->getOvertimePickupCost();
     }
 
 }
