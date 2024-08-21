@@ -1,15 +1,22 @@
 <?php
 declare(strict_types=1);
-
-namespace Mwl91\Tests\Tdd\Unit\Fleet;
+namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 
 use Mwl91\Tdd\Domain\Fleet;
-use Mwl91\Tests\Tdd\Builders\CarBuilder;
 use Mwl91\Tests\Tdd\FleetTestCase;
-use PHPUnit\Framework\TestCase;
 
-final class FleetCarsCreateTest extends FleetTestCase
+final class FleetCreateTest extends FleetTestCase
 {
+    public function testCanCreateNewFleet(): void
+    {
+        // Given:
+
+        // When:
+        $fleet = new Fleet();
+
+        // Then:
+        $this->assertInstanceOf(Fleet::class, $fleet);
+    }
 
     public function testCanAddCarToFleet(): void
     {

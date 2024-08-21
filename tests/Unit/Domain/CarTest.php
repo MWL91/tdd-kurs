@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Mwl91\Tests\Tdd\Unit;
+namespace Mwl91\Tests\Tdd\Unit\Domain;
 
 use Money\Currency;
 use Money\Money;
@@ -11,11 +11,19 @@ use Mwl91\Tdd\Domain\Enums\CarClass;
 use Mwl91\Tdd\Domain\Enums\CarType;
 use Mwl91\Tdd\Domain\Enums\Transmission;
 use Mwl91\Tdd\Domain\Enums\Fuel;
+use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Large;
+use PHPUnit\Framework\Attributes\Medium;
+use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
+#[CoversClass(CarId::class)]
+#[CoversClass(Car::class)]
+#[Small]
 final class CarTest extends TestCase
 {
     #[TestDox('ID auta wygenerowany')]

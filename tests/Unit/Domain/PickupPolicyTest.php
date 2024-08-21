@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Mwl91\Tests\Tdd\Unit;
+namespace Mwl91\Tests\Tdd\Unit\Domain;
 
 use http\Exception\InvalidArgumentException;
 use Money\Currency;

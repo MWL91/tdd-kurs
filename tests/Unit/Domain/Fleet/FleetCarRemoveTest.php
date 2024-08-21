@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Mwl91\Tests\Tdd\Unit\Fleet;
+namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 
 use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tests\Tdd\Builders\CarBuilder;

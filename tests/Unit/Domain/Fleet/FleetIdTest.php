@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Mwl91\Tests\Tdd\Unit\Fleet;
+namespace Mwl91\Tests\Tdd\Unit\Domain\Fleet;
 
 use Mwl91\Tdd\Domain\ValueObjects\FleetId;
-use Mwl91\Tests\Tdd\Unit\Fleet\DeliveryCostTest;
+use Mwl91\Tests\Tdd\Unit\Domain\Fleet\DeliveryCostTest;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
