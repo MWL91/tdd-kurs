@@ -8,6 +8,7 @@ use Mwl91\Tdd\Application\Commands\CreateFleetCommandHandler;
 use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tdd\Domain\ValueObjects\FleetId;
 use Mwl91\Tdd\Infrastructure\Repositories\Fleet\FleetInMemoryRepository;
+use Mwl91\Tdd\Infrastructure\Repositories\Fleet\FleetRepository;
 use Mwl91\Tests\Tdd\FleetTestCase;
 
 final class CreateFleetTest extends FleetTestCase
@@ -28,5 +29,24 @@ final class CreateFleetTest extends FleetTestCase
         $this->assertEquals(1, $fleetRepository->count());
         $this->assertInstanceOf(Fleet::class, $fleetRepository->find($id));
     }
+
+    public function testCanCreateFleetUsingMock(): void
+    {
+        // Given:
+        $id = FleetId::make();
+        $fleetRepository = $this->createMock(FleetRepository::class);
+
+        $fleetRepository
+            ->expects($this->once())
+            ->method('create')
+            ->with(new Fleet($id));
+
+        $command = new CreateFleetCommand($id);
+        $commandHandler = new CreateFleetCommandHandler($fleetRepository);
+
+        // When:
+        $commandHandler($command);
+    }
+
 
 }
