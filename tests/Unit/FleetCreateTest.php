@@ -1,11 +1,9 @@
 <?php
 
 use Mwl91\Tdd\Domain\Car;
-use Mwl91\Tdd\Domain\Enums\Fuel;
 use Mwl91\Tdd\Domain\Fleet;
 use Mwl91\Tests\Tdd\FleetTestCase;
-
-uses(FleetTestCase::class);
+use function Pest\Faker\fake;
 
 describe('Fleet create', function() {
     $fleet = new Fleet();
@@ -44,16 +42,29 @@ describe('Fleet create', function() {
         // Then:
         expect($fleet)->toHaveCount(count($cars))
             ->and($fleet->getCars())->each->toBeInstanceOf(Car::class);
-    })->group('fleet');
+    })->group('fleet')
+        ->done(
+            issue: "PP-123",
+            note: <<<NOTE
+PHP UnitTests should be refactored
+NOTE
+        );
+
+    it('should add cars to existing fleet with cars', function () use ($fleet) {});
 
     it('should process json', function(){
         // Given:
-        $data = [1, 2, 3];
+        $array = [
+            fake()->numberBetween(1, 10),
+            fake()->numberBetween(1, 10),
+            fake()->numberBetween(1, 11)
+        ];
+        $data = fake()->shuffleArray($array);
 
         // When:
         $json = json_encode($data);
 
         // Then:
-        expect($json)->json()->toBe([1, 2, 3])->not->toBe('[1,2,3]');
+        expect($json)->json()->toContain(...$array);
     })->group('example');
 });
