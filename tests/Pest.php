@@ -39,3 +39,10 @@ pest()->extend(FleetTestCase::class)->beforeAll(function () {
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
 });
+
+// Architecture testing
+arch()->expect('Mwl91\Tdd')->toUseStrictTypes();
+arch()->expect('Mwl91\Tdd\Domain\Enums')->toBeEnums();
+
+arch()->preset()->security();
+//arch()->preset()->php();
