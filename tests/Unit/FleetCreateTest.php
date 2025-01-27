@@ -10,7 +10,17 @@ uses(FleetTestCase::class);
 describe('Fleet create', function() {
     $fleet = new Fleet();
 
-    it('should create fleet', fn() => expect($fleet)->toBeInstanceOf(Fleet::class));
+    beforeEach(function() use($fleet) {
+        $cars = $fleet->getCars();
+        foreach ($cars as $car) {
+            $fleet->deleteCar($car);
+        }
+    });
+
+    it(
+        'should create fleet',
+        fn() => expect($fleet)->toBeInstanceOf(Fleet::class)
+    )->group('fleet');
 
     it('should add car to fleet', function() use ($fleet) {
         // Given:
@@ -22,7 +32,7 @@ describe('Fleet create', function() {
         // Then:
         expect($fleet)->toHaveCount(1)
             ->and($fleet->getCars())->toContain($car);
-    });
+    })->group('fleet');
 
     it('should create fleet with many cars', function () use ($fleet) {
         // Given:
@@ -34,7 +44,7 @@ describe('Fleet create', function() {
         // Then:
         expect($fleet)->toHaveCount(count($cars))
             ->and($fleet->getCars())->each->toBeInstanceOf(Car::class);
-    });
+    })->group('fleet');
 
     it('should process json', function(){
         // Given:
@@ -45,5 +55,5 @@ describe('Fleet create', function() {
 
         // Then:
         expect($json)->json()->toBe([1, 2, 3])->not->toBe('[1,2,3]');
-    });
+    })->group('example');
 });

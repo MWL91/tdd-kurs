@@ -49,5 +49,5 @@ describe('Car test', function(){
             ->and($car->getPrice())->toBe($price)
             ->and($car->getBrand())->toBe($brand)
             ->and($car->getModel())->toBe($model);
-    });
+    })->group('fleet', 'cars');
 });
