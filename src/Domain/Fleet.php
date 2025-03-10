@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Mwl91\Tdd\Domain;
 
-use Money\Currency;
 use Money\Money;
 use Mwl91\Tdd\Domain\ValueObjects\CarId;
 use Mwl91\Tdd\Domain\ValueObjects\FleetId;
@@ -115,5 +114,4 @@ final class Fleet implements \Countable
     {
         return $this->pickupPolicy?->getOvertimePickupCost();
     }
-
 }
