@@ -29,4 +29,9 @@ final class FleetInMemoryRepository implements FleetRepository
     {
         $this->fleets[] = $fleet;
     }
+
+    public function delete(FleetId $id): void
+    {
+        // TODO: Implement delete() method.
+    }
 }

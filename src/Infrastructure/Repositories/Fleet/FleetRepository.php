@@ -12,4 +12,6 @@ interface FleetRepository
     public function find(FleetId $id): ?Fleet;
 
     public function create(Fleet $fleet): void;
+
+    public function delete(FleetId $id): void;
 }

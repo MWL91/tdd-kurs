@@ -1,20 +1,8 @@
 <?php
+declare(strict_types=1);
 
 namespace Mwl91\Tdd\Application\Commands;
 
-use Mwl91\Tdd\Domain\ValueObjects\FleetId;
-
-class CreateFleetCommand
+final class CreateFleetCommand extends FleetCommand
 {
-
-    public function __construct(
-        private readonly FleetId $fleetId
-    )
-    {
-    }
-
-    public function getFleetId(): FleetId
-    {
-        return $this->fleetId;
-    }
 }
