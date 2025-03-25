@@ -21,7 +21,7 @@ final class FleetInMemoryRepository implements FleetRepository
 
     public function find(FleetId $id): ?Fleet
     {
-        $found = array_filter($this->fleets, fn(Fleet $fleet) => $fleet->getKey() === $id);
+        $found = array_filter($this->fleets, fn(Fleet $fleet) => $fleet->getKey()->getId()->toString() === $id->getId()->toString());
         return end($found);
     }
 
